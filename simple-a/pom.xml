@@ -15,6 +15,7 @@
         <module>simple-a-api</module>
         <module>simple-a-provider</module>
         <module>simple-a-consumer</module>
+        <module>simple-a-eureka</module>
     </modules>
 
     <properties>
