@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 9201
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -25,7 +25,7 @@ spring:
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://www.qike.com:9001/eureka,http://www.qike.com:9002/eureka,http://www.qike.com:9003/eureka,
   instance:
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}/${spring.application.name}:@project.version@
     prefer-ip-address: true
