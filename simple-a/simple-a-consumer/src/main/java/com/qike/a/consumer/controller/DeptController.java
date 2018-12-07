@@ -2,9 +2,7 @@ package com.qike.a.consumer.controller;
 
 import com.buke.entity.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -36,4 +34,10 @@ public class DeptController {
     public List<Dept> list() {
         return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
     }
+
+    @GetMapping(value = "/consumer/port")
+    public Object port() {
+        return restTemplate.getForObject(REST_URL_PREFIX+"/port",String.class);
+    }
+
 }

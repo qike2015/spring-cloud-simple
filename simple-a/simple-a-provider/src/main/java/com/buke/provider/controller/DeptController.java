@@ -3,12 +3,17 @@ package com.buke.provider.controller;
 import com.buke.entity.Dept;
 import com.buke.provider.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class DeptController {
+
+    @Value("${server.port}")
+    String port;
+
     @Autowired
     private DeptService service;
 
@@ -27,5 +32,9 @@ public class DeptController {
         return service.list();
     }
 
+    @RequestMapping(value = "/port", method = RequestMethod.GET)
+    public Object port() {
+        return port;
+    }
 
 }
