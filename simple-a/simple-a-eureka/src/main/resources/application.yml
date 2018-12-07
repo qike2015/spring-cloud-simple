@@ -1,5 +1,6 @@
-server:
-  port: 7001
+spring:
+  profiles:
+    active: b
 
 eureka:
   instance:
@@ -10,3 +11,23 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
 
+---
+spring:
+  profiles: a
+
+server:
+  port: 9001
+
+---
+spring:
+  profiles: b
+
+server:
+  port: 9002
+
+---
+spring:
+  profiles: c
+
+server:
+  port: 9003
